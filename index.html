@@ -5,63 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test</title>
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <style>
-    h1 {
-      color: blanchedalmond;
-      background-color: aqua;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    #second-heading {
-      background-color: peru;
-    }
-    .third-heading {
-      background-color: darksalmon;
-    }
-    #id-3 {
-      background-color: blue;
-    }
-
-    header {
-      background-color: aquamarine;
-      color: aliceblue;
-    }
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-    li {
-      display: inline;
-    }
-
-    .parent-div {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: tomato;
-      height: 600px;
-    }
-    .child-div {
-      display: flex;
-      width: 200px;
-      height: 300px;
-      margin: 20px;
-      background-color: wheat;
-      justify-content: space-around;
-      text-align: center;
-
-      border: 4px solid whitesmoke;
-      border-radius: 10px;
-    }
-
-    .child-div img {
-      max-height: 100px;
-      max-width: 100px;
-    }
-  </style>
+  <style></style>
 
   <body>
     <h1>heading 1</h1>
@@ -157,36 +103,7 @@
       </ul>
     </footer>
 
-    <script>
-      //we could write javascript within. Amazing.
-      document.getElementById("second-heading").innerHTML = "Aloha Amigos";
-
-      document.getElementById("get-data");
-
-      const getDataButton = document.getElementById("get-data");
-      getDataButton.addEventListener("click", () => {
-        console.log("testing here");
-
-        function displayData(allbeers) {
-          document.querySelector("pre").innerHTML = JSON.stringify(
-            allbeers,
-            null,
-            2
-          );
-        }
-
-        fetch("https://api.sampleapis.com/beers/ale")
-          .then((data) => data.json())
-          .then((beers) => displayData(beers))
-          .catch((err) => console.log(err));
-      });
-
-      showAlert = () => {
-        alert("End Learning Turotorial");
-      };
-
-      const alertBtn = document.getElementById("show-alert-btn");
-      alertBtn.addEventListener("click", showAlert);
-    </script>
+    <!-- we could write javascript within. Amazing. -->
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
