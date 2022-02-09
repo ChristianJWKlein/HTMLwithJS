@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+  </head>
+  <style>
+    h1 {
+      color: blanchedalmond;
+      background-color: aqua;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    #second-heading {
+      background-color: peru;
+    }
+    .third-heading {
+      background-color: darksalmon;
+    }
+    #id-3 {
+      background-color: blue;
+    }
+
+    header {
+      background-color: aquamarine;
+      color: aliceblue;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      display: inline;
+    }
+
+    .parent-div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: tomato;
+      height: 600px;
+    }
+    .child-div {
+      display: flex;
+      width: 200px;
+      height: 300px;
+      margin: 20px;
+      background-color: wheat;
+      justify-content: space-around;
+      text-align: center;
+
+      border: 4px solid whitesmoke;
+      border-radius: 10px;
+    }
+
+    .child-div img {
+      max-height: 100px;
+      max-width: 100px;
+    }
+  </style>
+
+  <body>
+    <h1>heading 1</h1>
+    <h1 id="second-heading">heading 2</h1>
+    <h1 class="third-heading">heading 3</h1>
+    <h1 id="id-3">heading 4</h1>
+
+    <header>
+      <ul>
+        <li><a href="default.asp">Home</a></li>
+        <li><a href="news.asp">News</a></li>
+        <li><a href="contact.asp">Contact</a></li>
+        <li><a href="about.asp">About</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <section>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet
+          tempore explicabo magni! Tempora laborum ad explicabo officiis saepe
+          praesentium ut quis illo reiciendis. Dolor, voluptatem minima! Officia
+          necessitatibus ex culpa?
+        </p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+      </section>
+      <section>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat
+          debitis officia ipsa nihil eligendi praesentium reprehenderit aliquid,
+          sunt dolores molestias beatae aut illum mollitia obcaecati architecto
+          cupiditate repudiandae maxime dolorum? Cumque rem libero sed
+          voluptatem! Repellendus, facilis esse animi laudantium blanditiis
+          possimus maxime, dolorem alias quidem quam, iusto minus totam
+          suscipit. Itaque, rerum corrupti? Quibusdam eveniet ad libero nemo
+          expedita. Similique architecto asperiores reprehenderit quo facere,
+          laborum beatae modi officiis iusto, maiores impedit dicta accusantium
+          officia consequuntur omnis vero molestias mollitia? Quisquam quaerat
+          facere eveniet porro ut, atque reprehenderit soluta. Repudiandae
+          praesentium fugit quo sequi, perspiciatis minus. Animi, et iusto?
+          Soluta sint voluptates temporibus? Omnis assumenda aperiam tempore
+          itaque sapiente consequatur velit cum fugit commodi adipisci dolor,
+          facilis atque temporibus? Deserunt earum enim deleniti. Nobis fuga ut
+          earum sint ratione voluptas laboriosam, odio culpa quo reprehenderit
+          dolores eaque perferendis vero aliquid consequatur, natus similique
+          quos facilis fugit. Voluptatem, corrupti necessitatibus.
+        </p>
+        <p></p>
+        <p></p>
+      </section>
+
+      <!-- parent div -->
+      <div class="parent-div">
+        <div class="child-div">
+          <img
+            src="https://picsum.photos/id/237/150/200"
+            alt="A puppy Black Labrador sits and looks up at you.  Heart Melted."
+          />
+          <p>Pupper Man</p>
+        </div>
+        <div class="child-div">
+          <img
+            src="https://picsum.photos/200/300"
+            alt="Random Generated Picture"
+          />
+          <p>Random Generated Picture</p>
+        </div>
+        <div class="child-div">
+          <img
+            src="https://picsum.photos/200/300"
+            alt="Another Random generated pic"
+          />
+          <p>random generation</p>
+        </div>
+      </div>
+
+      <button onclick="console.log('test')">log test</button>
+
+      <button id="get-data" get some data>Get me some Data</button>
+      <button id="show-alert-btn">show alert</button>
+
+      <pre>BEERS GO HERE</pre>
+    </main>
+
+    <footer>
+      <ul>
+        <li>About Us</li>
+        <li>contact us</li>
+        <li>help</li>
+      </ul>
+    </footer>
+
+    <script>
+      //we could write javascript within. Amazing.
+      document.getElementById("second-heading").innerHTML = "Aloha Amigos";
+
+      document.getElementById("get-data");
+
+      const getDataButton = document.getElementById("get-data");
+      getDataButton.addEventListener("click", () => {
+        console.log("testing here");
+
+        function displayData(allbeers) {
+          document.querySelector("pre").innerHTML = JSON.stringify(
+            allbeers,
+            null,
+            2
+          );
+        }
+
+        fetch("https://api.sampleapis.com/beers/ale")
+          .then((data) => data.json())
+          .then((beers) => displayData(beers))
+          .catch((err) => console.log(err));
+      });
+
+      showAlert = () => {
+        alert("End Learning Turotorial");
+      };
+
+      const alertBtn = document.getElementById("show-alert-btn");
+      alertBtn.addEventListener("click", showAlert);
+    </script>
+  </body>
+</html>
